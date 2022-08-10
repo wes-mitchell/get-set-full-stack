@@ -1,12 +1,14 @@
 .homeContainer {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 1000px;
     display: flex;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-.imageContainer {
-    position: fixed;
-    width: 20rem;
-    margin: 0% 50%;
-    margin-top: 18%;
-    text-align: center;
+img {
+    width: 100%;
+    /* height: auto; */
 }
