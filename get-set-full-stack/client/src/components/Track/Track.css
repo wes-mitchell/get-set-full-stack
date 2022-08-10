@@ -1,0 +1,16 @@
+.trackContainer {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    border-radius: 3px;
+    max-width: 250px;
+    background-color: yellow;
+    padding: 12px;
+    justify-content: space-between;
+    margin: 8px;
+}
+
+.trackBpm {
+    border-left: solid black 2px;
+    padding-left: 5px;
+}

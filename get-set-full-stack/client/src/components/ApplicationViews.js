@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import { Home } from "./Home";
+import { Track } from "./Track/Track";
 
 
 export default function ApplicationViews({ isLoggedIn }) {
@@ -13,7 +14,8 @@ export default function ApplicationViews({ isLoggedIn }) {
                     <Route index element={isLoggedIn ? <Home isLoggedIn={isLoggedIn} /> : <Navigate to="/login" />}
                     />
 
-                    <Route path="listings" >
+                    <Route path="track" >
+                        <Route index element={isLoggedIn ? <Track isLoggedIn={isLoggedIn} /> : <Navigate to="/login" />} />
                     </Route>
 
                     <Route path="categories">
