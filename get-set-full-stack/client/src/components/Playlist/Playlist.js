@@ -18,7 +18,7 @@ export const Playlist = () => {
             runTime: "00:03:20"
         },
         {
-            id: 1,
+            id: 2,
             name: "Don't Stop",
             bpm: 155,
             Notes: "don't rush",
@@ -27,7 +27,7 @@ export const Playlist = () => {
             runTime: "00:03:20"
         },
         {
-            id: 1,
+            id: 3,
             name: "Can't Stop This Way",
             bpm: 190,
             Notes: "don't rush",
@@ -44,7 +44,7 @@ export const Playlist = () => {
 
 
     return (
-        <div className="playlistContainer">
+        <div className="playListContainer">
             <div className="playList">
                 <div className="bandName">
                     <span>{playList.name}</span>
