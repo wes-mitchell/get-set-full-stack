@@ -1,0 +1,12 @@
+.homeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer {
+    position: fixed;
+    width: 20rem;
+    margin: 0% 50%;
+    margin-top: 18%;
+    text-align: center;
+}
