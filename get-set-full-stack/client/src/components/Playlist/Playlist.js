@@ -4,6 +4,7 @@ import { Track } from "./Track";
 import "./Playlist.css"
 
 export const Playlist = () => {
+    const [tracks, setTracks] = useState([])
 
     const playList = { name: "bully", description: "riot fest" }
     const trackArr = [
@@ -35,6 +36,10 @@ export const Playlist = () => {
             runTime: "00:03:20"
         }
     ]
+
+    useEffect(() => {
+        // get tracks by setlist id will go here
+    }, [])
 
 
 
