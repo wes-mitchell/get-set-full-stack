@@ -1,0 +1,14 @@
+.playList {
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 3px;
+    width: fit-content
+}
+
+.playListDescription {
+    text-align: center;
+}
+
+.bandName {
+    text-align: center;
+}
