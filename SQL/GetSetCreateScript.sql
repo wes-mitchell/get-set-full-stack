@@ -32,22 +32,23 @@ CREATE TABLE [Track] (
   [Notes] nvarchar(255) NOT NULL,
   [UserProfileId] int NOT NULL,
   [BandId] int NOT NULL,
-  [RunTime] Time (0) NOT NULL
+  [RunTime] Time NOT NULL
+)
+GO
+
+CREATE TABLE [Playlist] (
+  [Id] int PRIMARY KEY IDENTITY(1, 1),
+  [UserProfileId] int NOT NULL,
+  [Description] nvarchar(255) NOT NULL,
+  [BandId] int NOT NULL
 )
 GO
 
 CREATE TABLE [Band] (
   [Id] int PRIMARY KEY IDENTITY(1, 1),
   [Name] nvarchar(255) NOT NULL,
-  [UserProfileId] int NOT NULL
-)
-GO
-
-CREATE TABLE [Playlist] (
-  [Id] int PRIMARY KEY IDENTITY(1, 1),
-  [Title] nvarchar(255) NOT NULL,
   [UserProfileId] int NOT NULL,
-  [Description] nvarchar(255) NOT NULL
+  [PlaylistId] int NULL
 )
 GO
 
@@ -68,11 +69,23 @@ GO
 ALTER TABLE [Playlist] ADD FOREIGN KEY ([UserProfileId]) REFERENCES [UserProfile] ([Id])
 GO
 
+ALTER TABLE [PlaylistTrack] ADD FOREIGN KEY ([TrackId]) REFERENCES [Track] ([Id])
+GO
+
+ALTER TABLE [Playlist] ADD FOREIGN KEY ([BandId]) REFERENCES [Band] ([Id])
+GO
+
 ALTER TABLE [Track] ADD FOREIGN KEY ([BandId]) REFERENCES [Band] ([Id])
 GO
 
 ALTER TABLE [Track] ADD FOREIGN KEY ([UserProfileId]) REFERENCES [UserProfile] ([Id])
 GO
 
-ALTER TABLE [PlaylistTrack] ADD FOREIGN KEY ([TrackId]) REFERENCES [Track] ([Id])
-GO
+
+
+
+
+
+
+
+
