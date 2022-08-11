@@ -38,9 +38,11 @@ namespace get_set_full_stack.Repositories
                 {
                     cmd.CommandText = @"
                                     SELECT p.Id AS PlaylistId, p.Description,
-                                           up.Id AS UserProfileId, up.FirstName, up.LastName, up.Email, up.IsAdmin, up.IsActive
+                                           up.Id AS UserProfileId, up.FirstName, up.LastName, up.Email, up.IsAdmin, up.IsActive,
+                                           b.Id AS BandId, b.Name as BandName
                                     FROM Playlist p
                                     JOIN UserProfile up ON up.Id = p.UserProfileId
+                                    JOIN Band b ON b.Id = p.BandId
                                     WHERE up.Id = @id";
                     DbUtils.AddParameter(cmd, "@id", id);
 
@@ -63,7 +65,9 @@ namespace get_set_full_stack.Repositories
                                 Email = DbUtils.GetString(reader, "Email"),
                                 IsActive = reader.GetBoolean(reader.GetOrdinal("IsActive")),
                                 IsAdmin = reader.GetBoolean(reader.GetOrdinal("IsAdmin"))
-                            }
+                            },
+                            BandName = DbUtils.GetString(reader, "BandName"),
+                            BandId = DbUtils.GetInt(reader, "BandId")
                         };
                         playlists.Add(playlist);
                     }

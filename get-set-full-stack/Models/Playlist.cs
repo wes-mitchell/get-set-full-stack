@@ -1,4 +1,6 @@
-﻿namespace get_set_full_stack.Models
+﻿using System.Collections.Generic;
+
+namespace get_set_full_stack.Models
 {
     public class Playlist
     {
@@ -7,5 +9,9 @@
         public int UserProfileId { get; set; }
 
         public UserProfile UserProfile { get; set; }
+
+        public string BandName { get; set; }
+        public int BandId { get; set; }
+        public List<Track> Tracks { get; set; }
     }
 }

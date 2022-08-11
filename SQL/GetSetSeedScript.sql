@@ -20,10 +20,10 @@ VALUES
 set identity_insert [Band] off;
 
 set identity_insert [Playlist] on;
-INSERT INTO "Playlist" ("Id", "Description", "UserProfileId")
+INSERT INTO "Playlist" ("Id", "Description", "UserProfileId", "BandId")
 VALUES 
-(1, 'Riot Fest', 1),
-(2, 'Namm Show Performance', 2)
+(1, 'Riot Fest', 1, 5),
+(2, 'Namm Show Performance', 2, 6)
 set identity_insert [Playlist] off;
 
 set identity_insert [Track] on;
@@ -45,6 +45,15 @@ VALUES
 (4, 4, 1, 4),
 (5, 5, 1, 5)
 set identity_insert [PlaylistTrack] off;
+
+
+
+
+
+
+
+
+
 
 
 

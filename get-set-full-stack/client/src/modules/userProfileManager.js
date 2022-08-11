@@ -1,10 +1,10 @@
 import { getToken } from "./authManager";
 
-const baseUrl = "/api/Playlist"
+const baseUrl = `/api/UserProfile`
 
-export const getPlaylistsByUserId = () => {
+export const getCurrentUser = () => {
     return getToken().then((token) => {
-        return fetch(`${baseUrl}/userplaylists`, {
+        return fetch(`${baseUrl}/getcurrentuser`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -14,7 +14,7 @@ export const getPlaylistsByUserId = () => {
                 return res.json()
             } else {
                 throw new Error(
-                    "An unknown error occurred while trying to retrieve the users playlists."
+                    "An unknown error occurred while trying to retrieve the user."
                 )
             }
         })
